@@ -1,0 +1,265 @@
+/************************************************************/
+/* Bauhaus-Classless.css (THE ULTIMATE MASTER VERSION)      */
+/* Minimalist Print | Swiss Design | Strictly Classless     */
+/************************************************************/
+
+/* 1. CORE IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+    /* --- BAUHAUS PAPER PALETTE --- */
+    --paper: #f4f1ea; /* Aged paper color */
+    --ink: #1a1a1a; /* Deep charcoal ink */
+    --accent: #d32f2f; /* Bauhaus Red */
+    --line: rgba(26, 26, 26, 0.2);
+
+    --font-header: "Inter", sans-serif;
+    --font-body: "Libre Baskerville", serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #121212;
+        --ink: #e0e0e0;
+        --line: rgba(224, 224, 224, 0.2);
+    }
+}
+
+/* 2. BASE RESET & LAYOUT */
+html {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    padding: 8rem 2rem;
+    max-width: 800px;
+}
+
+/* 3. TYPOGRAPHY (THE GRID SYSTEM) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 0.85;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.05em;
+}
+
+h1 {
+    font-size: clamp(4rem, 10vw, 6rem);
+    border-left: 15px solid var(--ink);
+    padding-left: 2rem;
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    transition: all 0.2s;
+}
+
+a:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* 4. STRUCTURAL ELEMENTS */
+hr {
+    border: none;
+    border-top: 2px solid var(--ink);
+    margin: 5rem 0;
+}
+
+blockquote {
+    margin: 4rem 0;
+    padding: 1rem 0 1rem 2.5rem;
+    border-left: 1px solid var(--ink);
+    font-style: italic;
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+/* 5. FORMS & INTERACTIVE */
+button,
+input[type="submit"],
+input[type="button"] {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-block;
+    border: 3px solid var(--ink);
+    padding: 12px 30px;
+    font-family: var(--font-header);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    margin: 0.5rem 0;
+}
+
+button:hover {
+    background-color: var(--ink);
+    color: var(--paper);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 2rem;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-bottom-color: var(--accent);
+}
+
+/* 6. CONTAINERS */
+fieldset {
+    border: 2px solid var(--ink);
+    padding: 3rem;
+    margin: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+legend {
+    font-family: var(--font-header);
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0 15px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* 7. MEDIA (PRINT LOOK) */
+img,
+video {
+    max-width: 100%;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.6s ease;
+    border: 1px solid var(--ink);
+    margin: 2rem 0;
+}
+
+img:hover {
+    filter: grayscale(0%) contrast(1);
+}
+
+figure {
+    margin: 4rem 0;
+    padding: 0;
+}
+
+figcaption {
+    font-family: var(--font-header);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+audio {
+    width: 100%;
+    filter: grayscale(1) invert(1); /* Matches the ink aesthetic */
+    margin: 2rem 0;
+}
+
+/* 8. TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-header);
+    font-size: 0.85rem;
+    margin: 4rem 0;
+}
+
+th {
+    border-bottom: 4px solid var(--ink);
+    text-align: left;
+    padding: 15px 10px;
+    text-transform: uppercase;
+}
+
+td {
+    border-bottom: 1px solid var(--line);
+    padding: 20px 10px;
+}
+
+tr:hover td {
+    background-color: var(--ink);
+    color: var(--paper);
+}
+
+/* 9. PROGRESS & SCROLLBARS */
+progress {
+    appearance: none;
+    width: 100%;
+    height: 12px;
+    border: 1px solid var(--ink);
+    background: transparent;
+}
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+progress::-webkit-progress-value {
+    background: var(--accent);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ink);
+}
+
+/* 10. SELECTION */
+::selection {
+    background-color: var(--accent);
+    color: white;
+}
